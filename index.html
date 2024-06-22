@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="/Assets/CSS/style.css">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat:ital@0;1&display=swap"
+        rel="stylesheet">
+    <!--Icons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Portifólio</title>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <!-- NAVBAR -->
+        <div class="navbar ">
+            <nav>
+                <h2 class="portfolio">Portifo<span>lio</h2>
+
+                <!-- Menu desktop -->
+                <div id="nav-list">
+                    <ul>
+                        <li><a class="link-menu" href="#">Home</a></li>
+                        <li><a class="link-menu" href="#about-me">Sobre</a></li>
+                        <li><a class="link-menu" href="#projects-id">Projetos</a></li>
+                        <li><a class="link-menu" href="#contacts">Fale Comigo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Menu icon -->
+                <div class="mobile-menu-icon">
+                    <button><img class="icon" src="/Assets/IMG/menu_white_36dp.svg" alt="menu"
+                            onclick="clickMenu()"></button>
+                </div>
+            </nav>
+
+            <!-- Menu mobile -->
+            <div class="mobile-menu">
+                <ul>
+                    <li><a class="link-menu" href="#">Home</a></li>
+                    <li><a class="link-menu" href="#about-me">Sobre mim</a></li>
+                    <li><a class="link-menu" href="#projects-id">Projetos</a></li>
+                    <li><a class="link-menu" href="#contacts">Fale Comigo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <main>
+            <div class="my-name">
+                <h1>Rodrigo <span>Costa</span></h1>
+                <h3>Programador Front-End</h3>
+            </div>
+
+            <div>
+                <img src="/Assets/IMG/background.jfif" alt="Foto de código" id="background">
+            </div>
+        </main>
+
+        <!-- About-me -->
+        <section id="about-me">
+            <div>
+                <h2>Sobre mim</h1>
+                    <p>Sou um desenvolvedor front-end apaixonado por criar experiências incríveis na web. Com
+                        habilidades
+                        sólidas em HTML, CSS e JavaScript, estou sempre buscando aprender e aplicar novas tecnologias
+                        para
+                        melhorar minhas habilidades. Além disso, possuo conhecimentos em Python para desenvolvimento
+                        back-end, utilizo SQL para interação com bancos de dados, e sou proficient em utilizar o Git e o
+                        GitHub para versionamento de código e colaboração em projetos.
+                    </p>
+                    <a id="btn-contact" href="#contacts">Entre em contato!</a>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <div class="projects" id="projects-id">
+            <h2>Principais Projetos</h2>
+
+            <div class="grid-container">
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h5>Playstation Store</h5>
+                    <p>Projeto de uma réplica da PlayStation Store, desenvolvido com HTML, CSS e JavaScript, focado em
+                        criar uma interface intuitiva e responsiva</p>
+                    <a href="https://playstationstore2.netlify.app/" target="_blank">Ver Projeto</a>
+                </div>
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h5>Calculadora</h5>
+                    <p>Implementação de uma calculadora básica com funcionalidades aritméticas essenciais para facilitar
+                        operações matemáticas simples.</p>
+                    <a href="/Projects/Calculadora_HTML/calculadora.html" target="_blank">Ver Projeto</a>
+                </div>
+
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h5>Site de moda</h5>
+                    <p>Desenvolvimento de um site de moda moderno e responsivo com HTML e CSS, destacando as últimas tendências e
+                        produtos da marca.</p>
+                    <a href="/Projects/Site_de_moda/Site_de_moda.html" target="_blank">Ver Projeto</a>
+                </div>
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h5>Galeria de Fotos</h5>
+                    <p>Criação de um site de galeria de fotos com HTML, CSS e Bootstrap, visando uma plataforma elegante
+                        e responsiva para exibir fotos de forma intuitiva e agradável.</p>
+                    <a href="/Projects/Galery_bootstrap/galeryb.html" target="_blank">Ver Projeto</a>
+                </div>
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h5>E-commerce</h5>
+                    <p>E-comerce, contendo pagina inicial, card de produtos com preços, carrinho de compras, login e API. Site
+                        responsivo realizado com HTML, CSS e JavaScript </p>
+                    <a href="/Projects/Ecomerce/ecomerce.html" target="_blank">Ver Projeto</a>
+                </div>
+
+
+
+                <div class="card">
+                    <img src="" alt="">
+                    <h5>Site de fotografia de paisagens</h5>
+                    <p>Site para fotógrafo de paisagens, feito com HTML, CSS. Visa exibir o portfólio de forma atraente
+                        e responsiva.</p>
+                    <a href="/Projects/Galeria_fotos_paisagens/galery_img.html" target="_blank">Ver Projeto</a>
+                </div>
+            </div>
+        </div>
+
+        <button id="scrollToTopBtn">
+            <i class='bx bx-up-arrow-alt'></i>
+        </button>
+
+
+        <!-- FOOTER -->
+        <footer id="contacts">
+            <h5>Rodrigo Costa</h5>
+            <p>Contate-me &#x21E9</p>
+
+            <div class="links">
+
+                <ul class="ul-icons">
+                    <li><a href="https://wa.me/5511970481330" title="Celular" target="_blank"><i
+                                class='bx bxl-whatsapp'></i></a></li>
+                    <li><a href="mailto:rodrigo_ward@hotmail.com" title="Email" target="_blank"><i
+                                class='bx bxs-envelope'></i></a></li>
+                    <li><a href="https://github.com/Rodrigopcosta" title="GitHub" target="_blank"><i
+                                class='bx bxl-github'></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/rodrigo-pereira-8ba332206/" title="linkedin"
+                            target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="/Assets/Javascript/script.js"></script>
+
+    <script src="/Assets/Javascript/up_button.js"></script>
+</body>
+
+</html>
