@@ -160,7 +160,7 @@ main {
 }
 
 .card {
-    background-color: #191919;
+    background-color: #fff;
     border-radius: 20px;
     padding: 20px 35px;
     text-align: center;
@@ -170,17 +170,18 @@ main {
 }
 
 .icons-card{
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 150px;
+    max-height: 100px;
+    margin: 10px;
 }
 
 .card h5 {
-    color: white;
+    color: #034fa0;
     font-size: 24px;
 }
 
 .card p {
-    color: white;
+    color: black;
     margin: 20px 0 40px;
 }
 
