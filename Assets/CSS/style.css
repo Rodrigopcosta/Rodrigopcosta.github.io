@@ -190,12 +190,15 @@ main {
     color: white;
     padding: 11px 30px;
     border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
 }
 
 .card a:hover {
     background-color: transparent;
     border: 2px solid #1d4fbb;
+    color: #000;
     transition: 0.5s;
 }
 
