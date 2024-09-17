@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleNavigationClick(link) {
     document.querySelectorAll('article').forEach(section => section.classList.remove('active'));
     document.querySelectorAll('.navbar-link').forEach(navLink => navLink.classList.remove('active'));
-
+  
     const pageName = link.textContent.trim().toLowerCase().replace(/\s+/g, '-');
     const pageClassMap = {
       'sobre': 'about',
@@ -92,12 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
       'blog': 'blog',
       'contato': 'contact'
     };
-
+  
     const sectionClass = pageClassMap[pageName];
     const targetSection = document.querySelector(`.${sectionClass}`);
+    
     if (targetSection) {
       targetSection.classList.add('active');
       link.classList.add('active');
+      
+      // Rola a página para o topo completo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 });
