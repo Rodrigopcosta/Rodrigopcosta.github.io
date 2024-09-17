@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-ber">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodrigo Costa | Portfólio</title>
+
+  <!-- ícone da página-->
+  <link rel="shortcut icon" href="./img/Portfolio.ico" type="image/x-icon" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/styles.css" />
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <!-- JavaScript -->
+  <script src="./js/script.js"></script>
+
+  <!--Ícones -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <main>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="./img/Rodrigo.jpg" alt="Rodrigo Costa" width="70" style="border-radius: 20px" />
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Rodrigo Costa">Rodrigo Costa</h1>
+
+          <p class="title">Fullstack Developer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Mostrar contatos</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+      </div>
+
+      <div class="sidebar-info_more">
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:rodrigo_ward@hotmail.com" class="contact-link">rodrigo_ward@hotmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Localização</p>
+
+              <address>São Paulo - SP, Brasil</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+          <li class="social-item">
+            <a href="https://github.com/Rodrigopcosta" class="social-link" target="_blank" rel="noopener noreferrer">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/rodrigo-costa-desenvolverdor-web/" class="social-link" target="_blank"
+              rel="noopener noreferrer">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>Sobre</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Currículo</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfólio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contato</button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- SOBRE MIM -->
+      <article class="about" data-page="about">
+        <header>
+          <h2 class="h2 article-title">Sobre mim</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Desenvolvedor Fullstack com experiência em Front-end e Back-end.
+          </p>
+
+          <p>
+            Tenho conhecimento em tecnologias como HTML5, CSS3, JavaScript (ES6+),
+            React, Vite.js, Next.js, Redux, Tailwind CSS e SASS, além de trabalhar com Node.js, Docker, PostgreSQL,
+            Sequelize e práticas de testes automatizados utilizando Jest. Também sou habilidoso em integração de APIs,
+            desenvolvimento de interfaces responsivas e acessíveis, e otimização de código para escalabilidade e
+            performance.
+          </p>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section class="service">
+          <h3 class="h3 service-title">O que eu faço</h3>
+
+          <ul class="service-list">
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./img/icons8-prototyping-100.png
+      " alt="design icon" width="60" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Desenvolvimento Front-end</h4>
+
+                <p class="service-item-text">
+                  Criação de interfaces responsivas e acessíveis utilizando React, Next.js, Tailwind CSS e SASS,
+                  otimizando a experiência do usuário.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./img/icons8-api-100.png" alt="Web development icon" width="60" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Desenvolvimento Back-end</h4>
+
+                <p class="service-item-text">
+                  Implementação de APIs e integrações, trabalhando com Node.js, PostgreSQL, Sequelize, e boas práticas
+                  de segurança e escalabilidade.
+                </p>
+              </div>
+            </li>
+
+
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./img/icons8-web-development-100.png" alt="mobile app icon" width="60" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Testes Automatizados</h4>
+
+                <p class="service-item-text">
+                  Utilização de Jest para garantir a qualidade do código, aplicando testes unitários e de integração
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./img/icons8-responsive-web-100.png" alt="camera icon" width="60" />
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Deploy e Contêinerização</h4>
+
+                <p class="service-item-text">
+                  Gerenciamento de ambientes com Docker, configurando e automatizando o deploy de aplicações para
+                  garantir consistência em produção. </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </article>
+      <!-- CURRÍCULO -->
+      <article class="resume" data-page="resume">
+        <header>
+          <h2 class="h2 article-title">Currículo</h2>
+        </header>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Educação</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">UNICV Universidade Cidade Verde </h4>
+
+              <span>Jan 2023 - Jun 2025</span>
+
+            </li>
+          </ol>
+        </section>
+
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experiência</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">desenvolvedor freelancer</h4>
+
+              <span>Fev 2024 - Atual</span>
+
+              <p class="timeline-text">
+                Desenvolvimento de sites responsivos e otimizados usando React, Next.js e Tailwind CSS, além da
+                construção APIs e gerenciamento de dados com Node.js e PostgreSQL.
+              </p>
+            </li>
+
+          </ol>
+        </section>
+
+        <section class="skill">
+          <h3 class="h3 skills-title">Minhas habilidades</h3>
+
+          <ul class="skills-list content-card">
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/HTML.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/CSS.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/JavaScript.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Typescript.svg" width="70px">
+              </div>
+            </li>
+
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Angular.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/React.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Next.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Redux.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Tailwind.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/SASS.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/ViteJS.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Node.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Express.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Bootstrap.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Docker.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Postgresql.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Mysql.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Mongodb.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Sequelize.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Git.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Github.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Jest.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/PHP.svg" width="70px">
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <img src="./img/Python.svg" width="70px">
+              </div>
+            </li>
+        </section>
+      </article>
+
+      <!-- PORTFÓLIO -->
+      <article class="portfolio" data-page="portfolio">
+        <header>
+          <h2 class="h2 article-title">Portfólio</h2>
+        </header>
+
+        <section class="projects">
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>Todos</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Prototipagem</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Aplicações</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Landing Pages</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-select-value>
+                Selecionar Categoria
+              </div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item">
+                <button data-select-item>Todos</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Prototipagem</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Aplicações</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Landing Pages</button>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <!-- Hamburgueria -->
+            <li class="project-item active" data-filter-item data-category="Landing Pages">
+              <a href="https://newdevburguer.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/Hambugueria.png" alt="Hambugueria" loading="lazy" height="50px" />
+                </figure>
+
+                <h3 class="project-title">Dev Burguer</h3>
+
+                <p class="project-category">Landing Pages</p>
+              </a>
+            </li>
+
+            <!-- E-cormece -->
+            <li class="project-item active" data-filter-item data-category="Landing Pages">
+              <a href="https://bluestoreshop.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/BlueStore.png" alt="BlueStore" loading="lazy" />
+                </figure>
+
+                <h3 class="project-title">Blue Store</h3>
+
+                <p class="project-category">Landing Pages</p>
+              </a>
+            </li>
+
+            <!-- Playstation Store -->
+            <li class="project-item active" data-filter-item data-category="Landing Pages">
+              <a href="https://playstationstore2.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/PlaystationStore.png" alt="Playstationstore" loading="lazy" height="50px" />
+                </figure>
+
+                <h3 class="project-title">Playstation Store</h3>
+
+                <p class="project-category">Landing Pages</p>
+              </a>
+            </li>
+
+            <!-- Galeria de Artes -->
+            <li class="project-item active" data-filter-item data-category="Landing Pages">
+              <a href="https://arteurbana.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/Arteurbana.png" alt="Arte urbana" loading="lazy" height="50px" />
+                </figure>
+
+                <h3 class="project-title">Art</h3>
+
+                <p class="project-category">Landing Pages</p>
+              </a>
+            </li>
+
+            <!-- Paisagens -->
+            <li class="project-item active" data-filter-item data-category="Landing Pages">
+              <a href="https://fotografias-de-paisagens.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/Paisagens.png" alt="Fotografia de paisagens" loading="lazy" height="50px" />
+                </figure>
+
+                <h3 class="project-title">Art</h3>
+
+                <p class="project-category">Landing Pages</p>
+              </a>
+            </li>
+
+            <!-- Calculadora -->
+            <li class="project-item active" data-filter-item data-category="Landing Pages">
+              <a href="https://calculo-rapido.netlify.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./img/Calculadora.png" alt="Calculadora" loading="lazy" height="50px" />
+                </figure>
+
+                <h3 class="project-title">Calculadora</h3>
+
+                <p class="project-category">Landing Pages</p>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+
+
+      <!-- CONTATO -->
+      <article class="contact" data-page="contact">
+        <header>
+          <h2 class="h2 article-title">Contate-me!</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14620.600377545563!2d-46.76528994738593!3d-23.634795209987725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce53fbac8d8a0f%3A0xa8890c12cd495250!2sCampo%20Limpo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005775-230!5e0!3m2!1spt-BR!2sbr!4v1726571903267!5m2!1spt-BR!2sbr"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+          <h3 class="h3 form-title">Formulário de contato</h3>
+
+          <form action="https://formspree.io/f/mjkbddlp" class="form" method="POST" data-form>
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Nome completo" required
+                data-form-input />
+
+              <input type="email" name="email" class="form-input" placeholder="Email" required data-form-input />
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Escreva uma mensagem" required
+              data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Enviar mensagem</span>
+            </button>
+          </form>
+        </section>
+      </article>
+    </div>
+  </main>
+</body>
+
+</html>
