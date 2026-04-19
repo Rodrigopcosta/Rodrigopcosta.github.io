@@ -11,9 +11,9 @@ const config: Config = {
         'dark-bg': '#080b10',
         'dark-bg2': '#0c1018',
         'dark-bg3': '#111827',
-        'accent': '#39ff7e',
-        'accent2': '#ff6b35',
-        'accent3': '#7c6dfa',
+        accent: '#39ff7e',
+        accent2: '#ff6b35',
+        accent3: '#7c6dfa',
         'text-primary': '#e8eaf0',
         'text-dim': '#6b7280',
       },
@@ -23,7 +23,7 @@ const config: Config = {
         mono: ['var(--font-mono)', 'monospace'],
       },
       backgroundColor: {
-        'dark': 'var(--bg)',
+        dark: 'var(--bg)',
         'dark-2': 'var(--bg2)',
         'dark-3': 'var(--bg3)',
       },
@@ -31,8 +31,8 @@ const config: Config = {
         'dark-border': 'var(--border)',
       },
       textColor: {
-        'dim': 'var(--txt-dim)',
-        'primary': 'var(--txt)',
+        dim: 'var(--txt-dim)',
+        primary: 'var(--txt)',
       },
       animation: {
         float: 'float 8s ease-in-out infinite',

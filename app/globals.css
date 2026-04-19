@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer base {
   :root {
@@ -125,16 +125,24 @@ body::before {
     text-shadow: none;
   }
   20% {
-    text-shadow: -3px 0 var(--accent2), 3px 0 var(--accent);
+    text-shadow:
+      -3px 0 var(--accent2),
+      3px 0 var(--accent);
   }
   40% {
-    text-shadow: 3px 0 var(--accent2), -3px 0 var(--accent);
+    text-shadow:
+      3px 0 var(--accent2),
+      -3px 0 var(--accent);
   }
   60% {
-    text-shadow: -2px 0 var(--accent3), 2px 0 var(--accent2);
+    text-shadow:
+      -2px 0 var(--accent3),
+      2px 0 var(--accent2);
   }
   80% {
-    text-shadow: 2px 0 var(--accent), -2px 0 var(--accent3);
+    text-shadow:
+      2px 0 var(--accent),
+      -2px 0 var(--accent3);
   }
   100% {
     text-shadow: none;
@@ -291,16 +299,24 @@ body::before {
     text-shadow: none;
   }
   20% {
-    text-shadow: -3px 0 var(--accent2), 3px 0 var(--accent);
+    text-shadow:
+      -3px 0 var(--accent2),
+      3px 0 var(--accent);
   }
   40% {
-    text-shadow: 3px 0 var(--accent2), -3px 0 var(--accent);
+    text-shadow:
+      3px 0 var(--accent2),
+      -3px 0 var(--accent);
   }
   60% {
-    text-shadow: -2px 0 var(--accent3), 2px 0 var(--accent2);
+    text-shadow:
+      -2px 0 var(--accent3),
+      2px 0 var(--accent2);
   }
   80% {
-    text-shadow: 2px 0 var(--accent), -2px 0 var(--accent3);
+    text-shadow:
+      2px 0 var(--accent),
+      -2px 0 var(--accent3);
   }
   100% {
     text-shadow: none;

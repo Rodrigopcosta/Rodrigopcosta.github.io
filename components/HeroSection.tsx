@@ -4,16 +4,17 @@ import { useEffect, useState } from 'react';
 
 export default function HeroSection() {
   const [displayText, setDisplayText] = useState('');
-  const phrases = [
-    'React Developer',
-    'Next.js Developer',
-    'Full Stack Dev',
-    'TypeScript Lover',
-  ];
   const [currentPhrase, setCurrentPhrase] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+    const phrases = [
+      'React Developer',
+      'Next.js Developer',
+      'Full Stack Dev',
+      'TypeScript Lover',
+    ];
+
     let timeout: NodeJS.Timeout;
 
     const typeLoop = () => {
@@ -41,10 +42,13 @@ export default function HeroSection() {
 
     timeout = setTimeout(typeLoop, isDeleting ? 50 : 85);
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentPhrase, phrases]);
+  }, [displayText, isDeleting, currentPhrase]);
 
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden py-30 pb-20 flex flex-col justify-center">
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden py-30 pb-20 flex flex-col justify-center"
+    >
       {/* Orbs background */}
       <div
         className="absolute top-0 right-0 -z-10 h-125 w-125 rounded-full bg-[#39ff7e] blur-[80px] opacity-12 animate-float"
@@ -74,7 +78,9 @@ export default function HeroSection() {
               className="mt-2 flex items-center gap-1.5 text-[clamp(18px,2.4vw,28px)] font-light text-[#6b7280] flex-nowrap"
               style={{ minHeight: '2em' }}
             >
-              <span className="shrink-0 whitespace-nowrap">Full Stack ·&nbsp;</span>
+              <span className="shrink-0 whitespace-nowrap">
+                Full Stack ·&nbsp;
+              </span>
               <span className="whitespace-nowrap font-semibold text-[#ff6b35]">
                 {displayText}
               </span>
@@ -125,8 +131,12 @@ export default function HeroSection() {
               👨‍💻
             </div>
 
-            <div className="mb-1 text-sm font-bold text-white">Rodrigo Costa</div>
-            <div className="font-mono text-xs text-[#6b7280] mb-5">@rodrigopcosta</div>
+            <div className="mb-1 text-sm font-bold text-white">
+              Rodrigo Costa
+            </div>
+            <div className="font-mono text-xs text-[#6b7280] mb-5">
+              @rodrigopcosta
+            </div>
 
             <div className="grid grid-cols-2 gap-3.5">
               {[
@@ -135,7 +145,10 @@ export default function HeroSection() {
                 { num: '8', label: 'em produção' },
                 { num: '100%', label: 'commit rate' },
               ].map((stat, i) => (
-                <div key={i} className="rounded-[10px] border border-white/5 bg-[rgba(255,255,255,.03)] p-3.5">
+                <div
+                  key={i}
+                  className="rounded-[10px] border border-white/5 bg-[rgba(255,255,255,.03)] p-3.5"
+                >
                   <div className="font-display text-2xl text-[#39ff7e] leading-none">
                     {stat.num}
                   </div>
