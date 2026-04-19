@@ -13,7 +13,7 @@ export default function ContactSection() {
   const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -39,7 +39,10 @@ export default function ContactSection() {
         formDataToSend.append('company', formData.company);
       }
       formDataToSend.append('message', formData.message);
-      formDataToSend.append('subject', `Novo contato via portfólio: ${formData.name}`);
+      formDataToSend.append(
+        'subject',
+        `Novo contato via portfólio: ${formData.name}`,
+      );
       formDataToSend.append('from_name', formData.name);
 
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -59,7 +62,7 @@ export default function ContactSection() {
       setSubmitMessage(
         error instanceof Error
           ? `Erro: ${error.message}`
-          : 'Erro ao enviar a mensagem.'
+          : 'Erro ao enviar a mensagem.',
       );
     } finally {
       setIsSubmitting(false);
@@ -76,7 +79,8 @@ export default function ContactSection() {
             <span className="flex-1 h-px bg-white/5" />
           </div>
           <h2 className="font-display text-[clamp(36px,5vw,56px)] text-white mb-2">
-            Vamos<br />
+            Vamos
+            <br />
             conversar?
           </h2>
           <p className="max-w-135 text-sm text-[#6b7280]">
@@ -211,7 +215,7 @@ export default function ContactSection() {
           {/* Contact Form */}
           <div className="rounded-2xl border border-white/5 bg-[#0c1018] p-8">
             <div className="mb-5 font-mono text-xs uppercase tracking-widest text-[#6b7280]">
-              // mensagem direta
+              {/* mensagem direta */}
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4.5">

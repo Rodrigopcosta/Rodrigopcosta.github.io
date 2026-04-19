@@ -25,12 +25,14 @@ Desenvolvedor Full Stack, especializado no ecossistema Next. Focado em construir
 ## ✨ Features Principais
 
 ### 🎯 Experiência de Usuário
+
 - ✅ **Cursor Customizado** - Sistema interativo de cursor com tracking suave
 - ✅ **Animações Fluidas** - Scroll reveal, typing effect, transições smooth
 - ✅ **Design Responsivo** - Mobile-first, funciona perfeitamente em qualquer dispositivo
 - ✅ **Performance Otimizada** - Lighthouse score 95+, CLS < 0.1
 
 ### 🛠️ Funcionalidades Técnicas
+
 - ✅ **Filtragem de Projetos** - Filter by status (Produção/Em andamento)
 - ✅ **Formulário de Contato** - Com validação e feedback visual
 - ✅ **Animações com Framer Motion** - Transições fluidas e naturais
@@ -39,6 +41,7 @@ Desenvolvedor Full Stack, especializado no ecossistema Next. Focado em construir
 - ✅ **Acessibilidade** - WCAG 2.1 AA compliant
 
 ### 🚀 Arquitetura Moderna
+
 - ✅ **App Router (Next.js 16)** - Roteamento moderno e otimizado
 - ✅ **Server Components** - Renderização eficiente no servidor
 - ✅ **TypeScript** - Type-safe em 100% da codebase
@@ -50,17 +53,17 @@ Desenvolvedor Full Stack, especializado no ecossistema Next. Focado em construir
 
 ## 🛠️ Tech Stack
 
-| Categoria | Tecnologia | Versão |
-|-----------|-----------|--------|
-| **Framework** | Next.js | 16.2.4 |
-| **UI Library** | React | 19.2.4 |
-| **Language** | TypeScript | 5.7.0 |
-| **Styling** | Tailwind CSS | 4.0.0 |
-| **Fonts** | Google Fonts | Latest |
-| **Linting** | ESLint | 9.0.0 |
-| **Formatting** | Prettier | 3.5.1 |
-| **Git Hooks** | Husky | 9.1.7 |
-| **Icons** | Lucide React | 0.475.0 |
+| Categoria      | Tecnologia   | Versão  |
+| -------------- | ------------ | ------- |
+| **Framework**  | Next.js      | 16.2.4  |
+| **UI Library** | React        | 19.2.4  |
+| **Language**   | TypeScript   | 5.7.0   |
+| **Styling**    | Tailwind CSS | 4.0.0   |
+| **Fonts**      | Google Fonts | Latest  |
+| **Linting**    | ESLint       | 9.0.0   |
+| **Formatting** | Prettier     | 3.5.1   |
+| **Git Hooks**  | Husky        | 9.1.7   |
+| **Icons**      | Lucide React | 0.475.0 |
 
 ---
 
@@ -111,6 +114,7 @@ portfolio/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - **Node.js**: 18+ (18.17 ou superior)
 - **npm**: 9+ ou **yarn** 1.22+
 - **Git**: Para clonar o repositório
@@ -169,16 +173,17 @@ npm run type-check
 
 ## 📊 Performance
 
-| Métrica | Score | Status |
-|---------|-------|--------|
-| **Lighthouse** | 98 | 🟢 Excelente |
-| **Core Web Vitals** | 100% | 🟢 Good |
-| **First Contentful Paint** | 0.8s | 🟢 Fast |
-| **Largest Contentful Paint** | 1.2s | 🟢 Good |
-| **Cumulative Layout Shift** | 0.05 | 🟢 Good |
-| **Time to Interactive** | 1.4s | 🟢 Fast |
+| Métrica                      | Score | Status       |
+| ---------------------------- | ----- | ------------ |
+| **Lighthouse**               | 98    | 🟢 Excelente |
+| **Core Web Vitals**          | 100%  | 🟢 Good      |
+| **First Contentful Paint**   | 0.8s  | 🟢 Fast      |
+| **Largest Contentful Paint** | 1.2s  | 🟢 Good      |
+| **Cumulative Layout Shift**  | 0.05  | 🟢 Good      |
+| **Time to Interactive**      | 1.4s  | 🟢 Fast      |
 
 **Build Size:**
+
 - JavaScript: ~45KB (gzipped)
 - CSS: ~15KB (gzipped)
 - Total: ~60KB (gzipped)
@@ -188,6 +193,7 @@ npm run type-check
 ## 🎨 Design Decisions
 
 ### Por que Next.js 16?
+
 - ✅ App Router moderno com Server Components
 - ✅ Performance otimizada out-of-the-box
 - ✅ Suporte a TypeScript nativo
@@ -195,6 +201,7 @@ npm run type-check
 - ✅ Vercel deployment com zero config
 
 ### Por que Tailwind CSS?
+
 - ✅ Utility-first approach reduz CSS boilerplate
 - ✅ Dark mode integrado
 - ✅ Responsive design facilitado
@@ -202,12 +209,14 @@ npm run type-check
 - ✅ Melhor DX (Developer Experience)
 
 ### Por que Server Components?
+
 - ✅ Reduz JavaScript enviado ao cliente
 - ✅ Acesso direto a banco de dados/APIs
 - ✅ Melhor segurança (credenciais no servidor)
 - ✅ Renderização mais rápida
 
 ### Componentização Strategy
+
 - **Presentational Components**: Focam em UI (HeroSection, ProjectCard)
 - **Container Components**: Gerenciam estado (ProjectsSection com filtros)
 - **Utility Components**: Efeitos & animações (CustomCursor, Particles)
@@ -231,12 +240,14 @@ A melhor escolha para Next.js! Acesso automático a analytics, edge functions, e
 ### Deploy em outras plataformas
 
 **Netlify:**
+
 ```bash
 npm run build
 # Faça upload da pasta `.next` e `public`
 ```
 
 **Docker:**
+
 ```bash
 docker build -t portfolio .
 docker run -p 3000:3000 portfolio
@@ -247,12 +258,14 @@ docker run -p 3000:3000 portfolio
 ## 📱 Responsividade
 
 Testado e otimizado para:
+
 - ✅ Mobile (320px - 480px)
 - ✅ Tablet (481px - 1024px)
 - ✅ Desktop (1025px+)
 - ✅ Ultra-wide (1921px+)
 
 Breakpoints:
+
 ```
 sm: 640px
 md: 768px
@@ -322,6 +335,7 @@ Sugestões e melhorias são bem-vindas!
 5. Abra um Pull Request
 
 **Padrão de commits:**
+
 ```
 feat: adiciona nova feature
 fix: corrige bug

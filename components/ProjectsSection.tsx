@@ -118,7 +118,8 @@ const PROJECTS: Project[] = [
   {
     id: 10,
     title: 'E-commerce de Óculos',
-    description: 'Loja com filtros avançados e try-on virtual 3D usando Three.js.',
+    description:
+      'Loja com filtros avançados e try-on virtual 3D usando Three.js.',
     emoji: '🕶️',
     gradient: 'from-[#001a2d] to-[#003d6b]',
     tech: ['Next.js', 'Three.js', 'Node.js'],
@@ -180,7 +181,7 @@ export default function ProjectsSection() {
   const [filter, setFilter] = useState<'all' | 'completed' | 'wip'>('all');
 
   const filteredProjects = PROJECTS.filter((p) =>
-    filter === 'all' ? true : p.status === filter
+    filter === 'all' ? true : p.status === filter,
   );
 
   const counts = {
@@ -198,7 +199,8 @@ export default function ProjectsSection() {
             <span className="flex-1 h-px bg-white/5" />
           </div>
           <h2 className="font-display text-[clamp(36px,5vw,56px)] text-white mb-2">
-            O que já<br />
+            O que já
+            <br />
             construí
           </h2>
           <p className="max-w-135 text-sm text-[#6b7280]">

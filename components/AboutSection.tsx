@@ -41,7 +41,9 @@ export default function AboutSection() {
             </p>
             <p className="text-sm text-[#6b7280] leading-relaxed">
               Estou sempre evoluindo — hoje com{' '}
-              <span className="font-semibold text-white">6 projetos em andamento</span>{' '}
+              <span className="font-semibold text-white">
+                6 projetos em andamento
+              </span>{' '}
               que exploram desde e-commerce com Stripe até apps com React
               Native.
             </p>
@@ -93,7 +95,7 @@ export default function AboutSection() {
           <div>
             <div className="mb-8">
               <h4 className="font-mono text-xs text-[#6b7280] uppercase tracking-widest mb-4">
-                // hard skills
+                {/* hard skills */}
               </h4>
               <div className="flex flex-wrap gap-2">
                 {[
@@ -116,7 +118,13 @@ export default function AboutSection() {
                   <span
                     key={skill}
                     className={`inline-flex items-center rounded-md px-3 py-1.25 font-mono text-xs border transition-all hover:-translate-y-0.5 ${
-                      ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'].includes(skill)
+                      [
+                        'React',
+                        'Next.js',
+                        'TypeScript',
+                        'Tailwind CSS',
+                        'Node.js',
+                      ].includes(skill)
                         ? 'border-[rgba(57,255,126,.3)] bg-[rgba(57,255,126,.06)] text-[#39ff7e]'
                         : 'border-white/5 bg-[rgba(255,255,255,.03)] text-[#6b7280]'
                     }`}
@@ -129,7 +137,7 @@ export default function AboutSection() {
 
             <div>
               <h4 className="font-mono text-xs text-[#6b7280] uppercase tracking-widest mb-4">
-                // soft skills
+                {/* soft skills */}
               </h4>
               <ul className="space-y-2">
                 {[

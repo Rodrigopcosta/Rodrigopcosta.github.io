@@ -5,15 +5,18 @@ export default function ResumeSection() {
     <section id="resume" className="bg-[#0c1018] py-20">
       <div className="container mx-auto max-w-275 px-7">
         <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-linear-to-br from-[#0c1018] to-[#111827] px-16 py-14 flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
-          <div className="absolute right-0 top-0 h-100 w-100 rounded-full bg-gradient-radial from-[rgba(57,255,126,.06)] via-transparent to-transparent pointer-events-none" style={{ right: '-100px', top: '-100px' }} />
+          <div
+            className="absolute right-0 top-0 h-100 w-100 rounded-full bg-gradient-radial from-[rgba(57,255,126,.06)] via-transparent to-transparent pointer-events-none"
+            style={{ right: '-100px', top: '-100px' }}
+          />
 
           <div>
             <div className="mb-3 flex items-center gap-2 font-mono text-xs text-[#39ff7e] uppercase tracking-[0.15em]">
               03 — currículo
             </div>
             <h2 className="font-display text-[clamp(28px,4vw,44px)] text-white mb-2">
-              Quer ver<br />
-              o currículo?
+              Quer ver
+              <br />o currículo?
             </h2>
             <p className="text-sm text-[#6b7280]">
               PDF atualizado com experiências, formação e stack completa. Baixe

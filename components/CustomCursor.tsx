@@ -34,7 +34,7 @@ export default function CustomCursor() {
 
     // Cursor size change on hover
     const interactiveElements = document.querySelectorAll(
-      'a, button, .filter-btn, .skill-tag'
+      'a, button, .filter-btn, .skill-tag',
     );
     interactiveElements.forEach((el) => {
       el.addEventListener('mouseenter', () => {
