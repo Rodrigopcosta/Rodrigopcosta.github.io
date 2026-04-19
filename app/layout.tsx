@@ -63,6 +63,21 @@ export default function RootLayout({
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Segurança: Proteção contra XSS e injeção de scripts */}
+        <meta 
+          httpEquiv="Content-Security-Policy" 
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';" 
+        />
+        
+        {/* Segurança: Proteção contra Clickjacking */}
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        
+        {/* Segurança: Impede que o navegador tente adivinhar o tipo de conteúdo */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        
+        {/* Segurança: Controla as informações de origem enviadas em links */}
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
       </head>
       <body className="overflow-x-hidden">
         <CustomCursor />
