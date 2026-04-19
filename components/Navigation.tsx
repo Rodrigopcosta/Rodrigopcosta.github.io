@@ -64,7 +64,7 @@ export default function Navigation() {
         </ul>
 
         <a
-          href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+Rodrigo%21+Vi+seu+portf%C3%B3lio."
+          href="https://wa.me/5511940886936?text=Ol%C3%A1%2C+Rodrigo%21+Vi+seu+portf%C3%B3lio."
           target="_blank"
           rel="noopener noreferrer"
           className="font-mono text-xs font-semibold rounded-md bg-[#39ff7e] px-4.5 py-2 text-[#080b10] uppercase tracking-wider transition-[opacity,transform] hover:opacity-85 hover:-translate-y-px"
