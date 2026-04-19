@@ -1,21 +1,53 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Bebas_Neue, JetBrains_Mono, Manrope } from 'next/font/google';
 import './globals.css';
+import CustomCursor from '@/components/CustomCursor';
+import Navigation from '@/components/Navigation';
+import BackToTop from '@/components/BackToTop';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const bebasNeue = Bebas_Neue({
+  variable: '--font-display',
   subsets: ['latin'],
+  weight: '400',
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-mono',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+});
+
+const manrope = Manrope({
+  variable: '--font-body',
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
-  title: 'Rodrigo Costa | Full Stack Developer',
-  description: 'Portfólio de Rodrigo Costa, desenvolvedor Full Stack especializado em React, Next.js e Node.js.',
-  keywords: ['Full Stack Developer', 'React', 'Next.js', 'TypeScript', 'Node.js', 'São Paulo'],
+  title: 'Rodrigo Costa — Full Stack Developer',
+  description:
+    'Desenvolvedor apaixonado por transformar ideias em produtos digitais que funcionam de verdade. Desde 2020 entregando interfaces rápidas, escaláveis e com boa experiência de uso.',
+  keywords: [
+    'Full Stack Developer',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Node.js',
+    'São Paulo',
+    'Desenvolvedor',
+  ],
+  authors: [{ name: 'Rodrigo Costa' }],
+  icons: {
+    icon: '/icon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://rodrigocosta.dev',
+    title: 'Rodrigo Costa — Full Stack Developer',
+    description:
+      'Desenvolvedor apaixonado por transformar ideias em produtos digitais que funcionam de verdade.',
+  },
 };
 
 export default function RootLayout({
@@ -26,10 +58,17 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${bebasNeue.variable} ${jetbrainsMono.variable} ${manrope.variable} antialiased`}
+      style={{ cursor: 'none' }}
     >
-      <body className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-50">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body className="overflow-x-hidden">
+        <CustomCursor />
+        <Navigation />
         {children}
+        <BackToTop />
       </body>
     </html>
   );

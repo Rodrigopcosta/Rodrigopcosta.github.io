@@ -1,8 +1,26 @@
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import ResumeSection from '@/components/ResumeSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import Particles from '@/components/Particles';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold">Rodrigo Costa</h1>
-      <p className="mt-4 text-xl">Full Stack Developer</p>
+    <main>
+      <div
+        id="particles"
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      />
+      <Particles />
+
+      <HeroSection />
+      <AboutSection />
+      <ProjectsSection />
+      <ResumeSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
