@@ -22,14 +22,49 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitMessage('');
 
-    // Simulate sending email
-    setTimeout(() => {
-      setSubmitMessage('✓ Mensagem enviada!');
+    try {
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+      if (!accessKey) {
+        throw new Error('Chave Web3Forms não configurada');
+      }
+
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', accessKey);
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      if (formData.company) {
+        formDataToSend.append('company', formData.company);
+      }
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('subject', `Novo contato via portfólio: ${formData.name}`);
+      formDataToSend.append('from_name', formData.name);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data?.message || 'Erro ao enviar o formulário.');
+      }
+
+      setSubmitMessage('✓ Mensagem enviada com sucesso!');
       setFormData({ name: '', email: '', company: '', message: '' });
+    } catch (error) {
+      setSubmitMessage(
+        error instanceof Error
+          ? `Erro: ${error.message}`
+          : 'Erro ao enviar a mensagem.'
+      );
+    } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitMessage(''), 3000);
-    }, 1200);
+      setTimeout(() => setSubmitMessage(''), 5000);
+    }
   };
 
   return (
