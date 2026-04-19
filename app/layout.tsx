@@ -66,8 +66,8 @@ export default function RootLayout({
 
         {/* Segurança: Proteção contra XSS e injeção de scripts */}
         <meta
-          http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com; frame-ancestors 'none';"
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;"
         />
 
         {/* Segurança: Impede que o navegador tente adivinhar o tipo de conteúdo */}
