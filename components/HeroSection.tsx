@@ -20,7 +20,7 @@ export default function HeroSection() {
         setCommitCount(134);
       }
     }
-    
+
     fetchCommits();
   }, []);
 
@@ -184,7 +184,9 @@ export default function HeroSection() {
               </div>
               <div className="rounded-[10px] border border-white/5 bg-[rgba(255,255,255,.03)] p-3.5">
                 <div className="font-display text-2xl text-[#39ff7e] leading-none">
-                  {commitCount !== null ? `${commitCount.toLocaleString()}+` : '...'}
+                  {commitCount !== null
+                    ? `${commitCount.toLocaleString()}+`
+                    : '...'}
                 </div>
                 <div className="font-mono text-xs text-[#6b7280] mt-1">
                   contribuições (último ano)
