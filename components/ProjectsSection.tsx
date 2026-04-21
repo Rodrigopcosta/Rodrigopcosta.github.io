@@ -1,146 +1,155 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   emoji: string;
+  image?: string;
   gradient: string;
   tech: string[];
   status: 'completed' | 'wip';
   progress?: number;
   link: string;
+  repoLink?: string;
 }
 
 const PROJECTS: Project[] = [
   {
-    id: 1,
-    title: 'Lista de Tarefas',
+    id: 11,
+    title: 'FocusStudy — Micro-SaaS',
     description:
-      'CRUD completo com filtros por status, persistência em localStorage e UI limpa.',
-    emoji: '✅',
-    gradient: 'from-[#1a2744] to-[#0f1929]',
-    tech: ['React', 'localStorage', 'CSS'],
+      'Plataforma Full Stack para gestão de estudos de alto rendimento. Possui autenticação híbrida (Google/Email), timer Pomodoro, gerenciamento de disciplinas e notas em tempo real com Supabase.',
+    emoji: '📚',
+    image: '/screenshots/focus-study.png',
+    gradient: 'from-[#001a1a] to-[#003d3d]',
+    tech: ['Next.js', 'Supabase', 'PostgreSQL', 'TypeScript'],
     status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
+    link: 'https://focus-study.online/',
+    repoLink: 'https://github.com/Rodrigopcosta/FocusStudy',
   },
   {
-    id: 2,
-    title: 'Calculadora',
+    id: 12,
+    title: 'TaskShare — API Backend',
     description:
-      'Calculadora funcional com histórico de operações e design minimalista.',
-    emoji: '🧮',
-    gradient: 'from-[#1a1a2e] to-[#16213e]',
-    tech: ['JavaScript', 'HTML', 'CSS'],
+      'API robusta para gestão de tarefas colaborativas com arquitetura modular. Possui autenticação JWT, integração com Prisma ORM e documentação interativa via Swagger. Deploy realizado na AWS App Runner com banco PostgreSQL.',
+    emoji: '⚙️',
+    image: '/screenshots/taskshare-api.png',
+    gradient: 'from-[#1e1e2e] to-[#313244]',
+    tech: ['NestJS', 'Prisma', 'AWS', 'PostgreSQL', 'Swagger'],
+    status: 'wip',
+    link: 'https://8y7jwzwszc.us-east-1.awsapprunner.com/api',
+    repoLink: 'https://github.com/Rodrigopcosta/taskshare-backend',
+  },
+  {
+    id: 8,
+    title: 'Sabor & Artes — Delivery',
+    description:
+      'Sistema de cardápio digital oficial com gerenciamento de carrinho via Context API, persistência de dados e integração direta com WhatsApp para pedidos. Focado em performance mobile e conversão de vendas.',
+    emoji: '🍔',
+    image: '/screenshots/sabor-e-arte.png',
+    gradient: 'from-[#2d1200] to-[#5c2500]',
+    tech: ['Next.js 16', 'React 19', 'Tailwind CSS v4', 'TypeScript'],
     status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
+    link: 'https://saboreartes.com.br/',
+    repoLink: 'https://github.com/Rodrigopcosta/Sabor_e_arte_hamburgueria',
+  },
+  {
+    id: 7,
+    title: 'Método Digital Prático',
+    description:
+      'Landing Page de alta conversão focada em infoprodutos. Implementação de performance extrema com React Server Components, animações fluidas com Framer Motion e SEO estratégico para máxima indexação.',
+    emoji: '🚀',
+    image: '/screenshots/marketing.png',
+    gradient: 'from-[#1a0d2e] to-[#3d1a6b]',
+    tech: ['Next.js 16', 'Tailwind CSS v4', 'Framer Motion', 'TypeScript'],
+    status: 'completed',
+    link: 'https://metododigitalpratico.com.br/',
+    repoLink: 'https://github.com/Rodrigopcosta/landing-page-ebook',
+  },
+  {
+    id: 1,
+    title: 'TaskShare',
+    description:
+      'Plataforma de criação de hábitos em grupo. Escolha um objetivo, convide seus amigos e vejam juntos quem mantém a sequência por mais tempo. Ranking semanal, missões diárias e gamificação para transformar disciplina em diversão.',
+    emoji: '✅',
+    image: '/screenshots/taskshare.png',
+    gradient: 'from-[#1a2744] to-[#0f1929]',
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Radix UI'],
+    status: 'wip',
+    link: 'https://taskshare-web-29bf.vercel.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/task-web',
+  },
+  {
+    id: 5,
+    title: 'Encurtador de Links',
+    description:
+      'Plataforma Full-Stack com encurtamento inteligente, geração automática de QR Codes e histórico de links recentes. Focada em SEO e performance, inclui blog integrado, suporte a AdSense e interface ultra-rápida.',
+    emoji: '🔗',
+    image: '/screenshots/encurt-ink.png',
+    gradient: 'from-[#0d1f3c] to-[#1a3a5c]',
+    tech: ['Next.js 15+', 'TypeScript', 'Tailwind CSS v4', 'QR Code API'],
+    status: 'completed',
+    link: 'https://encurt.ink',
+    repoLink: 'https://github.com/Rodrigopcosta/encurtador-de-links',
+  },
+  {
+    id: 6,
+    title: 'Conversor de Moedas PWA',
+    description:
+      'Aplicação financeira de alta performance com conversão em tempo real, gráficos históricos e alertas de taxa. Desenvolvido como PWA, oferece suporte offline, suporte multilíngue e interface otimizada para SEO e acessibilidade.',
+    emoji: '💱',
+    image: '/screenshots/currency-converter.png',
+    gradient: 'from-[#0d2818] to-[#134d2a]',
+    tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'PWA'],
+    status: 'completed',
+    link: 'https://currency-converter-nu-livid.vercel.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/currency-converter',
   },
   {
     id: 3,
     title: 'Previsão do Tempo',
     description:
-      'Clima em tempo real com geolocalização, ícones dinâmicos e busca por cidade.',
+      'Aplicação meteorológica avançada com Next.js 16 e React 19. Oferece previsão de 5 dias com gráficos interativos, índice UV, geolocalização, suporte multilíngue (i18n) e modo Dark/Light persistente.',
     emoji: '🌤️',
+    image: '/screenshots/weather-forecast.png',
     gradient: 'from-[#0d2137] to-[#0a3d62]',
-    tech: ['React', 'OpenWeather API', 'Axios'],
+    tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Recharts'],
     status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
+    link: 'https://weather-forecast-app-rho-nine.vercel.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/weather-forecast-app',
   },
   {
     id: 4,
-    title: 'Calculadora IMC',
+    title: 'Calculadora de IMC',
     description:
-      'Calcula o IMC com tabela de classificação da OMS e feedback visual colorido.',
+      'Calculadora de alta performance desenvolvida com Next.js 16 e React 19. Oferece feedback visual dinâmico por faixas de peso, suporte a múltiplas unidades de medida e cards educativos com foco em acessibilidade e UX.',
     emoji: '⚖️',
+    image: '/screenshots/imc-calculator.png',
     gradient: 'from-[#1f0d2e] to-[#2d1b69]',
+    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4'],
+    status: 'completed',
+    link: 'https://imcacul.vercel.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/Calcular-IMC',
+  },
+  {
+    id: 2,
+    title: 'Calculadora',
+    description:
+      'Calculadora online completa com modos básico e científico. Suporte a teclado, histórico de cálculos, funções trigonométricas, logaritmos e constantes matemáticas.',
+    emoji: '🧮',
+    image: '/screenshots/calculator.png',
+    gradient: 'from-[#1a1a2e] to-[#16213e]',
     tech: ['JavaScript', 'HTML', 'CSS'],
     status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 5,
-    title: 'Encurtador de Link',
-    description:
-      'Encurta URLs via API externa com cópia com um clique e histórico de sessão.',
-    emoji: '🔗',
-    gradient: 'from-[#0d1f3c] to-[#1a3a5c]',
-    tech: ['React', 'TypeScript', 'REST API'],
-    status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 6,
-    title: 'Conversor de Moedas',
-    description:
-      'Conversão em tempo real com múltiplas divisas e atualização automática de câmbio.',
-    emoji: '💱',
-    gradient: 'from-[#0d2818] to-[#134d2a]',
-    tech: ['React', 'TypeScript', 'Exchange Rate API'],
-    status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 7,
-    title: 'Página de Vendas — Ebooks',
-    description:
-      'Landing page de alta conversão com seções estratégicas, depoimentos e CTA otimizado.',
-    emoji: '📚',
-    gradient: 'from-[#1a0d2e] to-[#3d1a6b]',
-    tech: ['Next.js', 'Tailwind', 'TypeScript'],
-    status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 8,
-    title: 'Hamburgueria',
-    description:
-      'Cardápio digital com carrinho de compras, cálculo de total e finalização de pedido.',
-    emoji: '🍔',
-    gradient: 'from-[#2d1200] to-[#5c2500]',
-    tech: ['React', 'Context API', 'Styled Components'],
-    status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
+    link: 'https://calculo-rapido.netlify.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/Calculadora',
   },
   {
     id: 9,
-    title: 'E-commerce de Perfumes',
-    description:
-      'Loja completa com catálogo, carrinho, checkout com Stripe e painel admin.',
-    emoji: '🌸',
-    gradient: 'from-[#2d1f00] to-[#5c3f00]',
-    tech: ['Next.js', 'Stripe', 'PostgreSQL'],
-    status: 'wip',
-    progress: 59,
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 10,
-    title: 'E-commerce de Óculos',
-    description:
-      'Loja com filtros avançados e try-on virtual 3D usando Three.js.',
-    emoji: '🕶️',
-    gradient: 'from-[#001a2d] to-[#003d6b]',
-    tech: ['Next.js', 'Three.js', 'Node.js'],
-    status: 'wip',
-    progress: 56,
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 11,
-    title: 'Plataforma de Cursos',
-    description:
-      'LMS completo com vídeo-aulas, trilhas de aprendizado e certificados em PDF.',
-    emoji: '🎓',
-    gradient: 'from-[#1a0d3d] to-[#3d1a8a]',
-    tech: ['Next.js', 'NextAuth', 'AWS S3'],
-    status: 'wip',
-    progress: 55,
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 12,
     title: 'App de Nutrientes (TACO)',
     description:
       'Consulta de nutrientes com a Tabela TACO completa, diário alimentar e gráficos.',
@@ -152,7 +161,7 @@ const PROJECTS: Project[] = [
     link: 'https://github.com/Rodrigopcosta',
   },
   {
-    id: 13,
+    id: 10,
     title: 'Calculadora de Rescisão',
     description:
       'Cálculo de rescisão trabalhista com todos os tipos e exportação de relatório PDF.',
@@ -161,18 +170,6 @@ const PROJECTS: Project[] = [
     tech: ['React', 'TypeScript', 'Tailwind'],
     status: 'wip',
     progress: 63,
-    link: 'https://github.com/Rodrigopcosta',
-  },
-  {
-    id: 14,
-    title: 'Portal Concurseiros',
-    description:
-      'Plataforma de estudos com banco de questões, simulados e cronograma personalizado.',
-    emoji: '📖',
-    gradient: 'from-[#001a1a] to-[#003d3d]',
-    tech: ['Next.js', 'PostgreSQL'],
-    status: 'wip',
-    progress: 29,
     link: 'https://github.com/Rodrigopcosta',
   },
 ];
@@ -236,11 +233,20 @@ export default function ProjectsSection() {
             >
               {/* Image */}
               <div
-                className={`relative h-45 bg-linear-to-br ${project.gradient} overflow-hidden flex items-center justify-center`}
+                className={`relative h-65 bg-linear-to-br ${project.gradient} overflow-hidden flex items-center justify-center`}
               >
-                <div className="text-4xl transition-transform group-hover:scale-125 group-hover:rotate-3">
-                  {project.emoji}
-                </div>
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top"
+                  />
+                ) : (
+                  <div className="text-4xl transition-transform group-hover:scale-125 group-hover:rotate-3">
+                    {project.emoji}
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#0c1018]" />
                 <span
                   className={`absolute top-3 right-3 inline-flex rounded-full px-2.5 py-0.75 font-mono text-xs font-semibold ${
@@ -300,7 +306,7 @@ export default function ProjectsSection() {
                   Ver Demo →
                 </a>
                 <a
-                  href={project.link}
+                  href={project.repoLink ?? project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 rounded-2xl border border-white/5 py-2.25 text-center font-mono text-xs font-semibold text-[#6b7280] uppercase tracking-wider transition-all hover:border-[#ff6b35] hover:text-[#ff6b35]"
