@@ -127,7 +127,7 @@ export default function HeroSection() {
               aberto a oportunidades
             </div>
 
-            <div className="group relative mb-5 flex h-20 w-20 items-center justify-center rounded-3xl p-[2px] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(57,255,126,0.15)]">
+            <div className="group relative mb-5 flex h-20 w-20 items-center justify-center rounded-3xl p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(57,255,126,0.15)]">
               <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-[#7c6dfa] to-[#39ff7e] opacity-80 group-hover:opacity-100 transition-opacity"></div>
 
               {/* Fundo do Logo (Garante contraste) */}
