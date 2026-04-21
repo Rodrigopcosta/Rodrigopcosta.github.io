@@ -3,14 +3,27 @@
 import { useEffect, useState } from 'react';
 
 export default function CustomCursor() {
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [hasHover, setHasHover] = useState(true);
 
   useEffect(() => {
-    // Detecta se é dispositivo touch
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    setIsTouchDevice(isTouch);
+    // Detecta se o dispositivo suporta hover (mouse) usando CSS media query
+    const mql = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const supportsHover = mql.matches;
+    
+    setHasHover(supportsHover);
+    
+    // Escuta mudanças (ex: usuário conecta mouse em um tablet)
+    const handleChange = (e: MediaQueryListEvent) => {
+      setHasHover(e.matches);
+    };
+    
+    mql.addEventListener('change', handleChange);
+    return () => mql.removeEventListener('change', handleChange);
+  }, []);
 
-    if (isTouch) return; // Não inicializa cursor customizado em dispositivos touch
+  useEffect(() => {
+    // Se não suporta hover, não inicializa o cursor
+    if (!hasHover) return;
 
     const cursor = document.getElementById('cursor');
     const cursorRing = document.getElementById('cursor-ring');
@@ -40,10 +53,10 @@ export default function CustomCursor() {
     document.addEventListener('mousemove', handleMouseMove);
     animate();
 
-    // Cursor size change on hover
     const interactiveElements = document.querySelectorAll(
       'a, button, .filter-btn, .skill-tag',
     );
+    
     interactiveElements.forEach((el) => {
       el.addEventListener('mouseenter', () => {
         cursor.style.width = '20px';
@@ -65,10 +78,10 @@ export default function CustomCursor() {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
+  }, [hasHover]);
 
-  // Não renderiza nada em dispositivos touch
-  if (isTouchDevice) return null;
+  // Só renderiza se o dispositivo suportar hover (mouse)
+  if (!hasHover) return null;
 
   return (
     <>
