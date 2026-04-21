@@ -60,6 +60,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${bebasNeue.variable} ${jetbrainsMono.variable} ${manrope.variable} antialiased`}
       style={{ cursor: 'none' }}
+      suppressHydrationWarning
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
