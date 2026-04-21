@@ -11,11 +11,11 @@ export default function CaseSection() {
             case de sucesso
             <span className="flex-1 h-px bg-white/5" />
           </div>
-          
+
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
             Sabor & <span className="text-[#39ff7e]">Artes</span>
           </h2>
-          
+
           <div className="flex flex-wrap gap-3 mb-5">
             <span className="inline-flex rounded-full border border-[rgba(57,255,126,.3)] bg-[rgba(57,255,126,.06)] px-3 py-1 font-mono text-xs text-[#39ff7e]">
               PROJETO COMERCIAL
@@ -24,9 +24,10 @@ export default function CaseSection() {
               CLIENTE REAL
             </span>
           </div>
-          
+
           <p className="max-w-2xl text-base text-[#6b7280] leading-relaxed">
-            Como uma hamburgueria real aumentou vendas e automatizou operações com uma solução full stack.
+            Como uma hamburgueria real aumentou vendas e automatizou operações
+            com uma solução full stack.
           </p>
         </div>
 
@@ -37,7 +38,9 @@ export default function CaseSection() {
           </h3>
           <div className="rounded-xl border border-white/5 bg-[rgba(255,255,255,.02)] p-6 md:p-8">
             <p className="text-base text-[#6b7280] leading-relaxed mb-5">
-              O cliente atendia pedidos exclusivamente por WhatsApp, anotando em papel e organizando entregas manualmente. Com o crescimento, os principais desafios eram:
+              O cliente atendia pedidos exclusivamente por WhatsApp, anotando em
+              papel e organizando entregas manualmente. Com o crescimento, os
+              principais desafios eram:
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-base text-[#6b7280]">
@@ -67,32 +70,45 @@ export default function CaseSection() {
           </h3>
           <div className="rounded-xl border border-white/5 bg-[rgba(255,255,255,.02)] p-6 md:p-8">
             <p className="text-base text-[#6b7280] leading-relaxed mb-5">
-              Desenvolvimento de um cardápio digital completo com foco em conversão e automação:
+              Desenvolvimento de um cardápio digital completo com foco em
+              conversão e automação:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div className="flex items-center gap-2 rounded-lg border border-[rgba(57,255,126,.15)] bg-[rgba(57,255,126,.03)] px-4 py-2.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#39ff7e]" />
-                <span className="text-sm text-white">Carrinho com Context API</span>
+                <span className="text-sm text-white">
+                  Carrinho com Context API
+                </span>
               </div>
               <div className="flex items-center gap-2 rounded-lg border border-[rgba(57,255,126,.15)] bg-[rgba(57,255,126,.03)] px-4 py-2.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#39ff7e]" />
-                <span className="text-sm text-white">Integração Stripe + Mercado Pago</span>
+                <span className="text-sm text-white">
+                  Integração Stripe + Mercado Pago
+                </span>
               </div>
               <div className="flex items-center gap-2 rounded-lg border border-[rgba(57,255,126,.15)] bg-[rgba(57,255,126,.03)] px-4 py-2.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#39ff7e]" />
-                <span className="text-sm text-white">API Lalamove para entregas</span>
+                <span className="text-sm text-white">
+                  API Lalamove para entregas
+                </span>
               </div>
               <div className="flex items-center gap-2 rounded-lg border border-[rgba(57,255,126,.15)] bg-[rgba(57,255,126,.03)] px-4 py-2.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#39ff7e]" />
-                <span className="text-sm text-white">Notificações via Telegram</span>
+                <span className="text-sm text-white">
+                  Notificações via Telegram
+                </span>
               </div>
               <div className="flex items-center gap-2 rounded-lg border border-[rgba(57,255,126,.15)] bg-[rgba(57,255,126,.03)] px-4 py-2.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#39ff7e]" />
-                <span className="text-sm text-white">Confirmação por WhatsApp</span>
+                <span className="text-sm text-white">
+                  Confirmação por WhatsApp
+                </span>
               </div>
               <div className="flex items-center gap-2 rounded-lg border border-[rgba(57,255,126,.15)] bg-[rgba(57,255,126,.03)] px-4 py-2.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#39ff7e]" />
-                <span className="text-sm text-white">Painel administrativo</span>
+                <span className="text-sm text-white">
+                  Painel administrativo
+                </span>
               </div>
             </div>
           </div>
@@ -105,19 +121,27 @@ export default function CaseSection() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="rounded-xl border border-white/5 bg-[rgba(255,255,255,.02)] p-5 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">+40%</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">
+                +40%
+              </div>
               <div className="text-xs text-[#6b7280]">aumento nos pedidos</div>
             </div>
             <div className="rounded-xl border border-white/5 bg-[rgba(255,255,255,.02)] p-5 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">100%</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">
+                100%
+              </div>
               <div className="text-xs text-[#6b7280]">pedidos organizados</div>
             </div>
             <div className="rounded-xl border border-white/5 bg-[rgba(255,255,255,.02)] p-5 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">-2h</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">
+                -2h
+              </div>
               <div className="text-xs text-[#6b7280]">por dia economizadas</div>
             </div>
             <div className="rounded-xl border border-white/5 bg-[rgba(255,255,255,.02)] p-5 text-center">
-              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">24/7</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#39ff7e] mb-1">
+                24/7
+              </div>
               <div className="text-xs text-[#6b7280]">funcionando</div>
             </div>
           </div>
@@ -138,7 +162,7 @@ export default function CaseSection() {
                 'Stripe',
                 'Mercado Pago',
                 'Telegram API',
-                'Context API'
+                'Context API',
               ].map((tech) => (
                 <span
                   key={tech}
@@ -155,7 +179,8 @@ export default function CaseSection() {
         <div>
           <div className="rounded-xl border border-[rgba(57,255,126,.2)] bg-[rgba(57,255,126,.03)] p-6 text-center">
             <p className="text-sm text-white mb-4">
-              🍔 <span className="font-semibold">Projeto real em produção</span> — cliente ativo utilizando diariamente
+              🍔 <span className="font-semibold">Projeto real em produção</span>{' '}
+              — cliente ativo utilizando diariamente
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a

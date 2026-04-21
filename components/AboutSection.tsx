@@ -24,10 +24,13 @@ export default function AboutSection() {
             <p className="text-sm text-[#6b7280] leading-relaxed">
               Comecei a programar em{' '}
               <span className="font-semibold text-white">junho de 2024</span> e,
-              em menos de um ano, já construí projetos comerciais reais — incluindo
-              uma hamburgueria com pagamentos via{' '}
-              <span className="font-semibold text-white">Stripe e Mercado Pago</span>,
-              um Micro-SaaS de produtividade e uma API backend em desenvolvimento na AWS.
+              em menos de um ano, já construí projetos comerciais reais —
+              incluindo uma hamburgueria com pagamentos via{' '}
+              <span className="font-semibold text-white">
+                Stripe e Mercado Pago
+              </span>
+              , um Micro-SaaS de produtividade e uma API backend em
+              desenvolvimento na AWS.
             </p>
             <p className="text-sm text-[#6b7280] leading-relaxed">
               Sou graduando em{' '}
@@ -38,14 +41,15 @@ export default function AboutSection() {
               <span className="font-semibold text-white">
                 Desenvolvedor Full Stack freelancer
               </span>
-              . Minha experiência anterior em suporte técnico (Teleperformance e KTGroup)
-              me deu disciplina, análise de logs e visão de negócio — skills que levo
-              para cada projeto.
+              . Minha experiência anterior em suporte técnico (Teleperformance e
+              KTGroup) me deu disciplina, análise de logs e visão de negócio —
+              skills que levo para cada projeto.
             </p>
             <p className="text-sm text-[#6b7280] leading-relaxed">
-              Hoje entrego aplicações com performance 90+ no Lighthouse, SEO otimizado
-              e integrações complexas (gateways de pagamento, notificações em tempo real,
-              autenticação OAuth). Código limpo e experiência do usuário sempre em primeiro lugar.
+              Hoje entrego aplicações com performance 90+ no Lighthouse, SEO
+              otimizado e integrações complexas (gateways de pagamento,
+              notificações em tempo real, autenticação OAuth). Código limpo e
+              experiência do usuário sempre em primeiro lugar.
             </p>
 
             {/* Timeline real */}
@@ -133,18 +137,20 @@ export default function AboutSection() {
                 🚀 Aprendendo agora
               </h4>
               <div className="flex flex-wrap gap-2">
-                {['NestJS', 'Prisma', 'AWS App Runner', 'React Native'].map((skill) => (
-                  <span
-                    key={skill}
-                    className="inline-flex items-center rounded-md px-3 py-1.25 font-mono text-xs border border-[rgba(255,107,53,.3)] bg-[rgba(255,107,53,.06)] text-[#ff6b35]"
-                  >
-                    📘 {skill}
-                  </span>
-                ))}
+                {['NestJS', 'Prisma', 'AWS App Runner', 'React Native'].map(
+                  (skill) => (
+                    <span
+                      key={skill}
+                      className="inline-flex items-center rounded-md px-3 py-1.25 font-mono text-xs border border-[rgba(255,107,53,.3)] bg-[rgba(255,107,53,.06)] text-[#ff6b35]"
+                    >
+                      📘 {skill}
+                    </span>
+                  ),
+                )}
               </div>
               <p className="text-xs text-[#6b7280] mt-3">
-                NestJS, Prisma e AWS App Runner: em estudo para minha próxima API.
-                React Native: próximo passo para mobile.
+                NestJS, Prisma e AWS App Runner: em estudo para minha próxima
+                API. React Native: próximo passo para mobile.
               </p>
             </div>
 
@@ -176,11 +182,12 @@ export default function AboutSection() {
             {/* Destaque */}
             <div className="mt-8 rounded-md border border-[rgba(57,255,126,.2)] bg-[rgba(57,255,126,.03)] p-4">
               <p className="text-xs text-[#6b7280] leading-relaxed">
-                🧠 <span className="text-white">Diferencial:</span>{' '}
-                Migrei do suporte N1/N2 (integração de Web Services e automação fiscal)
-                para desenvolvimento full stack em menos de 1 ano. Hoje entrego projetos
-                comerciais com pagamento real (Stripe/Mercado Pago), notificações em tempo real
-                e estudo constante para evoluir em backend e mobile.
+                🧠 <span className="text-white">Diferencial:</span> Migrei do
+                suporte N1/N2 (integração de Web Services e automação fiscal)
+                para desenvolvimento full stack em menos de 1 ano. Hoje entrego
+                projetos comerciais com pagamento real (Stripe/Mercado Pago),
+                notificações em tempo real e estudo constante para evoluir em
+                backend e mobile.
               </p>
             </div>
           </div>
