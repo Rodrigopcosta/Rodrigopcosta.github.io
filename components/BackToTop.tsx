@@ -1,20 +1,26 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 400) {
-        setIsVisible(true);
-      } else {
+      const currentY = window.scrollY;
+      const scrollingDown = currentY > lastScrollY.current;
+
+      if (currentY < 100) {
         setIsVisible(false);
+      } else if (scrollingDown) {
+        setIsVisible(true);
       }
+
+      lastScrollY.current = currentY;
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -26,7 +32,7 @@ export default function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Voltar ao início"
-      className={`fixed bottom-8 right-8 z-200 flex h-11 w-11 items-center justify-center rounded-full border border-white/5 bg-[#0c1018] text-[#6b7280] transition-all hover:border-[#39ff7e] hover:text-[#39ff7e] hover:shadow-[0_0_20px_rgba(57,255,126,.25)] ${
+      className={`fixed bottom-8 right-8 z-200 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/7 text-gray-200 transition-all hover:border-[#39ff7e] hover:text-[#39ff7e] hover:shadow-[0_0_20px_rgba(57,255,126,.25)] ${
         isVisible
           ? 'pointer-events-auto translate-y-0 opacity-100'
           : 'pointer-events-none translate-y-4 opacity-0'
