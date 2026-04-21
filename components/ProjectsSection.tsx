@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 interface Project {
@@ -176,6 +176,7 @@ const PROJECTS: Project[] = [
 
 export default function ProjectsSection() {
   const [filter, setFilter] = useState<'all' | 'completed' | 'wip'>('all');
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const filteredProjects = PROJECTS.filter((p) =>
     filter === 'all' ? true : p.status === filter,
@@ -186,6 +187,50 @@ export default function ProjectsSection() {
     completed: PROJECTS.filter((p) => p.status === 'completed').length,
     wip: PROJECTS.filter((p) => p.status === 'wip').length,
   };
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-card]'));
+
+    // Reset all cards to the initial hidden state (no transition yet)
+    cards.forEach((card) => {
+      card.style.transition = 'none';
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(60px)';
+    });
+
+    // IntersectionObserver handles BOTH cases:
+    // • Cards already in the viewport when filter changes → fires immediately
+    // • Cards below the fold → fires when the user scrolls to them
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const card = entry.target as HTMLElement;
+          const index = Number(card.dataset.index ?? 0);
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateX(0)';
+          }, index * 80);
+          observer.unobserve(card);
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    // Wait one frame so the reset styles are painted before we start observing
+    const frameId = requestAnimationFrame(() => {
+      cards.forEach((card) => observer.observe(card));
+    });
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      observer.disconnect();
+    };
+  }, [filteredProjects]);
 
   return (
     <section id="projects" className="py-25">
@@ -225,11 +270,14 @@ export default function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProjects.map((project) => (
+        <div ref={gridRef} className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-[#0c1018] transition-all hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl"
+              data-card
+              data-index={index}
+              style={{ opacity: 0, transform: 'translateX(60px)' }}
+              className="flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-[#0c1018] transition-[border-color,box-shadow] hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl"
             >
               {/* Image */}
               <div
