@@ -20,11 +20,19 @@ const FEATURED_PROJECTS: Project[] = [
     id: 1,
     title: 'Sabor & Artes — Delivery',
     description:
-      'Projeto comercial desenvolvido para cliente real. Cardápio digital com carrinho via Context API, integração com Mercado Pago, Lalamove para entregas, notificações via Telegram para o dono e WhatsApp para o cliente. Focado em performance mobile e conversão de vendas.',
+      'Projeto comercial desenvolvido para cliente real. Cardápio digital com carrinho via Context API, integração com Stripe e Mercado Pago, Lalamove para entregas, notificações via Telegram para o dono e WhatsApp para o cliente. Focado em performance mobile e conversão de vendas.',
     emoji: '🍔',
     image: '/screenshots/sabor-e-arte.png',
     gradient: 'from-[#2d1200] to-[#5c2500]',
-    tech: ['Next.js 16', 'React 19', 'Tailwind CSS v4', 'TypeScript', 'Mercado Pago', 'Telegram API'],
+    tech: [
+      'Next.js 16',
+      'React 19',
+      'Tailwind CSS v4',
+      'TypeScript',
+      'Stripe',
+      'Mercado Pago',
+      'Telegram API',
+    ],
     link: 'https://saboreartes.com.br/',
     repoLink: 'https://github.com/Rodrigopcosta/Sabor_e_arte_hamburgueria',
   },
@@ -131,7 +139,7 @@ const OTHER_PROJECTS: Project[] = [
 
 const TABS = [
   { id: 'featured', label: 'Principais', count: FEATURED_PROJECTS.length },
-  { id: 'others',   label: 'Outros',     count: OTHER_PROJECTS.length },
+  { id: 'others', label: 'Outros', count: OTHER_PROJECTS.length },
 ] as const;
 
 type TabId = (typeof TABS)[number]['id'];
@@ -200,9 +208,16 @@ function ProjectCard({
       className="group flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-[#0c1018] transition-[border-color,transform,box-shadow] duration-300 hover:border-white/20 hover:-translate-y-1 hover:shadow-2xl"
     >
       {/* Image */}
-      <div className={`relative bg-linear-to-br ${project.gradient} overflow-hidden ${isSmall ? 'h-44' : 'h-65'}`}>
+      <div
+        className={`relative bg-linear-to-br ${project.gradient} overflow-hidden ${isSmall ? 'h-44' : 'h-65'}`}
+      >
         {project.image ? (
-          <Image src={project.image} alt={project.title} fill className="object-cover object-top" />
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-top"
+          />
         ) : (
           <div className="flex h-full items-center justify-center text-4xl transition-transform group-hover:scale-125 group-hover:rotate-3">
             {project.emoji}
@@ -213,10 +228,14 @@ function ProjectCard({
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-2.5 p-5">
-        <div className={`font-bold text-white ${isSmall ? 'text-sm' : 'text-base'}`}>
+        <div
+          className={`font-bold text-white ${isSmall ? 'text-sm' : 'text-base'}`}
+        >
           {project.title}
         </div>
-        <p className={`leading-relaxed text-[#6b7280] ${isSmall ? 'text-xs' : 'text-sm'}`}>
+        <p
+          className={`leading-relaxed text-[#6b7280] ${isSmall ? 'text-xs' : 'text-sm'}`}
+        >
           {project.description}
         </p>
         <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
@@ -266,7 +285,6 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-25">
       <div className="container mx-auto max-w-275 px-7">
-
         {/* Header */}
         <div className="mb-14">
           <div className="mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-[#39ff7e]">
@@ -278,7 +296,9 @@ export default function ProjectsSection() {
             <br />
             construí
           </h2>
-          <p className="max-w-135 text-sm text-[#6b7280]">Projetos reais, com código real.</p>
+          <p className="max-w-135 text-sm text-[#6b7280]">
+            Projetos reais, com código real.
+          </p>
         </div>
 
         {/* Tabs */}
@@ -290,7 +310,9 @@ export default function ProjectsSection() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`relative rounded-lg px-5 py-2 font-mono text-xs uppercase tracking-widest transition-all duration-200 ${
-                  isActive ? 'text-[#39ff7e]' : 'text-[#6b7280] hover:text-white/60'
+                  isActive
+                    ? 'text-[#39ff7e]'
+                    : 'text-[#6b7280] hover:text-white/60'
                 }`}
               >
                 {isActive && (
@@ -331,7 +353,6 @@ export default function ProjectsSection() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );
