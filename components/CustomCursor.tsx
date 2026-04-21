@@ -1,9 +1,17 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CustomCursor() {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   useEffect(() => {
+    // Detecta se é dispositivo touch
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(isTouch);
+
+    if (isTouch) return; // Não inicializa cursor customizado em dispositivos touch
+
     const cursor = document.getElementById('cursor');
     const cursorRing = document.getElementById('cursor-ring');
 
@@ -58,6 +66,9 @@ export default function CustomCursor() {
       document.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
+  // Não renderiza nada em dispositivos touch
+  if (isTouchDevice) return null;
 
   return (
     <>
