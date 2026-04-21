@@ -76,10 +76,10 @@ export default function RootLayout({
         {/* Segurança: Controla as informações de origem enviadas em links */}
         <meta name="referrer" content="strict-origin-when-cross-origin" />
       </head>
-      <body className="overflow-x-hidden">
+      <body>
         <CustomCursor />
         <Navigation />
-        {children}
+        <div className="overflow-x-hidden">{children}</div>
         <BackToTop />
       </body>
     </html>
