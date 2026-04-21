@@ -127,8 +127,15 @@ export default function HeroSection() {
               aberto a oportunidades
             </div>
 
-            <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-[#7c6dfa] to-[#39ff7e] text-2xl">
-              👨‍💻
+            <div className="group relative mb-5 flex h-20 w-20 items-center justify-center rounded-3xl p-[2px] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(57,255,126,0.15)]">
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-[#7c6dfa] to-[#39ff7e] opacity-80 group-hover:opacity-100 transition-opacity"></div>
+
+              {/* Fundo do Logo (Garante contraste) */}
+              <div className="relative flex h-full w-full items-center justify-center rounded-[22px] bg-[#0c1018]">
+                <span className="font-mono text-3xl font-bold tracking-tighter bg-linear-to-br from-white to-white/60 bg-clip-text text-transparent">
+                  RC
+                </span>
+              </div>
             </div>
 
             <div className="mb-1 text-sm font-bold text-white">
@@ -141,8 +148,8 @@ export default function HeroSection() {
             <div className="grid grid-cols-2 gap-3.5">
               {[
                 { num: '5', label: 'anos de código' },
-                { num: '14', label: 'projetos built' },
-                { num: '8', label: 'em produção' },
+                { num: '12', label: 'projetos built' },
+                { num: '2', label: 'em produção' },
                 { num: '100%', label: 'commit rate' },
               ].map((stat, i) => (
                 <div
