@@ -13,6 +13,7 @@ interface Project {
   tech: string[];
   link: string;
   repoLink?: string;
+  type: 'frontend' | 'backend' | 'fullstack';
 }
 
 const FEATURED_PROJECTS: Project[] = [
@@ -35,6 +36,7 @@ const FEATURED_PROJECTS: Project[] = [
     ],
     link: 'https://saboreartes.com.br/',
     repoLink: 'https://github.com/Rodrigopcosta/Sabor_e_arte_hamburgueria',
+    type: 'fullstack',
   },
   {
     id: 2,
@@ -45,8 +47,9 @@ const FEATURED_PROJECTS: Project[] = [
     image: '/screenshots/focus-study.png',
     gradient: 'from-[#001a1a] to-[#003d3d]',
     tech: ['Next.js', 'Supabase', 'PostgreSQL', 'TypeScript'],
-    link: 'https://focus-study.online/',
+    link: 'https://www.focus-study.com.br',
     repoLink: 'https://github.com/Rodrigopcosta/FocusStudy',
+    type: 'fullstack',
   },
   {
     id: 3,
@@ -59,6 +62,7 @@ const FEATURED_PROJECTS: Project[] = [
     tech: ['NestJS', 'Prisma', 'AWS App Runner', 'PostgreSQL', 'Swagger'],
     link: 'https://8y7jwzwszc.us-east-1.awsapprunner.com/api',
     repoLink: 'https://github.com/Rodrigopcosta/taskshare-backend',
+    type: 'backend',
   },
   {
     id: 4,
@@ -71,6 +75,7 @@ const FEATURED_PROJECTS: Project[] = [
     tech: ['Next.js 15+', 'TypeScript', 'Tailwind CSS v4', 'QR Code API'],
     link: 'https://encurt.ink',
     repoLink: 'https://github.com/Rodrigopcosta/encurtador-de-links',
+    type: 'fullstack',
   },
 ];
 
@@ -86,6 +91,7 @@ const OTHER_PROJECTS: Project[] = [
     tech: ['Next.js 16', 'Tailwind CSS v4', 'Framer Motion', 'TypeScript'],
     link: 'https://metododigitalpratico.com.br/',
     repoLink: 'https://github.com/Rodrigopcosta/landing-page-ebook',
+    type: 'frontend',
   },
   {
     id: 6,
@@ -98,6 +104,7 @@ const OTHER_PROJECTS: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'PWA'],
     link: 'https://currency-converter-nu-livid.vercel.app/',
     repoLink: 'https://github.com/Rodrigopcosta/currency-converter',
+    type: 'frontend',
   },
   {
     id: 7,
@@ -110,6 +117,7 @@ const OTHER_PROJECTS: Project[] = [
     tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Recharts'],
     link: 'https://weather-forecast-app-rho-nine.vercel.app/',
     repoLink: 'https://github.com/Rodrigopcosta/weather-forecast-app',
+    type: 'frontend',
   },
   {
     id: 8,
@@ -122,6 +130,7 @@ const OTHER_PROJECTS: Project[] = [
     tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4'],
     link: 'https://imcacul.vercel.app/',
     repoLink: 'https://github.com/Rodrigopcosta/Calcular-IMC',
+    type: 'frontend',
   },
   {
     id: 9,
@@ -134,6 +143,7 @@ const OTHER_PROJECTS: Project[] = [
     tech: ['JavaScript', 'HTML', 'CSS'],
     link: 'https://calculo-rapido.netlify.app/',
     repoLink: 'https://github.com/Rodrigopcosta/Calculadora',
+    type: 'frontend',
   },
 ];
 
@@ -200,6 +210,12 @@ function ProjectCard({
 }) {
   const isSmall = size === 'small';
 
+  // Define o texto do botão principal baseado no tipo do projeto
+  const getMainButtonText = () => {
+    if (project.type === 'backend') return 'Swagger UI →';
+    return 'Ver Demo →';
+  };
+
   return (
     <div
       data-card
@@ -228,10 +244,28 @@ function ProjectCard({
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-2.5 p-5">
-        <div
-          className={`font-bold text-white ${isSmall ? 'text-sm' : 'text-base'}`}
-        >
-          {project.title}
+        <div className="flex items-center justify-between gap-2">
+          <div
+            className={`font-bold text-white ${isSmall ? 'text-sm' : 'text-base'}`}
+          >
+            {project.title}
+          </div>
+          {/* Badge de tipo */}
+          {project.type === 'backend' && (
+            <span className="inline-flex rounded-full border border-[rgba(57,255,126,.3)] bg-[rgba(57,255,126,.06)] px-2 py-0.5 font-mono text-[10px] text-[#39ff7e]">
+              API
+            </span>
+          )}
+          {project.type === 'frontend' && (
+            <span className="inline-flex rounded-full border border-[rgba(107,114,128,.3)] bg-[rgba(107,114,128,.06)] px-2 py-0.5 font-mono text-[10px] text-[#6b7280]">
+              FRONT
+            </span>
+          )}
+          {project.type === 'fullstack' && (
+            <span className="inline-flex rounded-full border border-[rgba(57,255,126,.3)] bg-[rgba(57,255,126,.06)] px-2 py-0.5 font-mono text-[10px] text-[#39ff7e]">
+              FULL
+            </span>
+          )}
         </div>
         <p
           className={`leading-relaxed text-[#6b7280] ${isSmall ? 'text-xs' : 'text-sm'}`}
@@ -258,7 +292,7 @@ function ProjectCard({
           rel="noopener noreferrer"
           className="flex-1 rounded-2xl bg-[#39ff7e] py-2.25 text-center font-mono text-xs font-semibold uppercase tracking-wider text-[#080b10] transition-all hover:opacity-90 hover:shadow-[0_0_20px_rgba(57,255,126,.3)]"
         >
-          Ver Demo →
+          {getMainButtonText()}
         </a>
         {project.repoLink && (
           <a
