@@ -46,7 +46,14 @@ const FEATURED_PROJECTS: Project[] = [
     emoji: '📚',
     image: '/screenshots/focus-study.png',
     gradient: 'from-[#001a1a] to-[#003d3d]',
-    tech: ['Next.js 16', 'Tailwind CSS v4', 'Supabase', 'PostgreSQL', 'TypeScript', 'Stripe'],
+    tech: [
+      'Next.js 16',
+      'Tailwind CSS v4',
+      'Supabase',
+      'PostgreSQL',
+      'TypeScript',
+      'Stripe',
+    ],
     link: 'https://www.focus-study.com.br',
     repoLink: 'https://github.com/Rodrigopcosta/FocusStudy',
     type: 'fullstack',
@@ -128,7 +135,13 @@ const OTHER_PROJECTS: Project[] = [
     emoji: '🌤️',
     image: '/screenshots/weather-forecast.png',
     gradient: 'from-[#0d2137] to-[#0a3d62]',
-    tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Recharts', 'OpenWeatherMap API'],
+    tech: [
+      'Next.js 16',
+      'TypeScript',
+      'Tailwind CSS v4',
+      'Recharts',
+      'OpenWeatherMap API',
+    ],
     link: 'https://weather-forecast-app-rho-nine.vercel.app/',
     repoLink: 'https://github.com/Rodrigopcosta/weather-forecast-app',
     type: 'frontend',
@@ -213,17 +226,13 @@ function useCardAnimation(projects: Project[]) {
   return gridRef;
 }
 
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const getMainButtonText = () => {
     if (project.type === 'backend') return 'Swagger UI →';
     return 'Ver Demo →';
   };
+
+  const isPriority = project.id === 1;
 
   return (
     <div
@@ -239,6 +248,9 @@ function ProjectCard({
             alt={project.title}
             fill
             className="object-cover object-top"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={isPriority}
+            loading={isPriority ? 'eager' : 'lazy'}
           />
         ) : (
           <div className="flex h-full items-center justify-center text-4xl transition-transform group-hover:scale-125 group-hover:rotate-3">
@@ -250,9 +262,7 @@ function ProjectCard({
 
       <div className="flex flex-1 flex-col gap-2.5 p-5">
         <div className="flex items-center justify-between gap-2 flex-wrap">
-          <div className="font-bold text-white text-base">
-            {project.title}
-          </div>
+          <div className="font-bold text-white text-base">{project.title}</div>
           <div className="flex gap-1.5">
             {project.type === 'backend' && (
               <span className="inline-flex rounded-full border border-[rgba(57,255,126,.3)] bg-[rgba(57,255,126,.06)] px-2 py-0.5 font-mono text-[10px] text-[#39ff7e]">
@@ -271,13 +281,13 @@ function ProjectCard({
             )}
           </div>
         </div>
-        
+
         {project.relatedBackend && (
           <div className="text-[10px] text-[#39ff7e] font-mono">
             🔗 Integrado com {project.relatedBackend}
           </div>
         )}
-        
+
         <p className="leading-relaxed text-[#6b7280] text-sm">
           {project.description}
         </p>
@@ -380,11 +390,7 @@ export default function ProjectsSection() {
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={index}
-            />
+            <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
       </div>
