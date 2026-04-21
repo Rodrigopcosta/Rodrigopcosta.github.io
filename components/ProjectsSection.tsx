@@ -1,41 +1,48 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface Project {
   id: number;
   title: string;
   description: string;
   emoji: string;
+  image?: string;
   gradient: string;
   tech: string[];
   status: 'completed' | 'wip';
   progress?: number;
   link: string;
+  repoLink?: string;
 }
 
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: 'Lista de Tarefas',
+    title: 'TaskShare',
     description:
-      'CRUD completo com filtros por status, persistência em localStorage e UI limpa.',
+      'Plataforma de criação de hábitos em grupo. Escolha um objetivo, convide seus amigos e vejam juntos quem mantém a sequência por mais tempo. Ranking semanal, missões diárias e gamificação para transformar disciplina em diversão.',
     emoji: '✅',
+    image: '/screenshots/taskshare.png',
     gradient: 'from-[#1a2744] to-[#0f1929]',
-    tech: ['React', 'localStorage', 'CSS'],
+    tech: ['Next.js', 'TypeScript', 'Tailwind', 'Radix UI'],
     status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
+    link: 'https://taskshare-web-29bf.vercel.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/task-web',
   },
   {
     id: 2,
     title: 'Calculadora',
     description:
-      'Calculadora funcional com histórico de operações e design minimalista.',
+      'Calculadora online completa com modos básico e científico. Suporte a teclado, histórico de cálculos, funções trigonométricas, logaritmos e constantes matemáticas.',
     emoji: '🧮',
+    image: '/screenshots/calculator.png',
     gradient: 'from-[#1a1a2e] to-[#16213e]',
     tech: ['JavaScript', 'HTML', 'CSS'],
     status: 'completed',
-    link: 'https://github.com/Rodrigopcosta',
+    link: 'https://calculo-rapido.netlify.app/',
+    repoLink: 'https://github.com/Rodrigopcosta/Calculadora',
   },
   {
     id: 3,
@@ -236,11 +243,20 @@ export default function ProjectsSection() {
             >
               {/* Image */}
               <div
-                className={`relative h-45 bg-linear-to-br ${project.gradient} overflow-hidden flex items-center justify-center`}
+                className={`relative h-65 bg-linear-to-br ${project.gradient} overflow-hidden flex items-center justify-center`}
               >
-                <div className="text-4xl transition-transform group-hover:scale-125 group-hover:rotate-3">
-                  {project.emoji}
-                </div>
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top"
+                  />
+                ) : (
+                  <div className="text-4xl transition-transform group-hover:scale-125 group-hover:rotate-3">
+                    {project.emoji}
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-[#0c1018]" />
                 <span
                   className={`absolute top-3 right-3 inline-flex rounded-full px-2.5 py-0.75 font-mono text-xs font-semibold ${
@@ -300,7 +316,7 @@ export default function ProjectsSection() {
                   Ver Demo →
                 </a>
                 <a
-                  href={project.link}
+                  href={project.repoLink ?? project.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 rounded-2xl border border-white/5 py-2.25 text-center font-mono text-xs font-semibold text-[#6b7280] uppercase tracking-wider transition-all hover:border-[#ff6b35] hover:text-[#ff6b35]"
